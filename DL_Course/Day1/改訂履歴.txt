@@ -1,0 +1,13 @@
+## DAY1_vr4_0_3,  2019.05.15
+* スライド 本講座の構成を整理
+* Notebook 1_7_predict.ipynb 不要行「test.reshape(-1)」を削除
+
+## DAY1_vr4_0_2,  2019.04.27
+* Notebook 0_preparation.ipynb, tensorflowのインストールに関する注意書きを追加
+* Notebook 0_preparation.ipynb, 「version3.0.0ではエラーが発生する場合がある」を「version3.0.0以降ではエラーが発生する場合がある」に修正
+
+## DAY1_vr4_0_1,  2019.04.21
+* スライドp.8 DAY2の損失関数をDAY1へ
+* スライドp.8 DAY2の数値微分を微分に変更
+* スライドp.8 DAY7に自然言語処理の基礎を追加
+* スライドp.8 DAY6 「RNNの応用」を「RNNの発展モデル」に変更
