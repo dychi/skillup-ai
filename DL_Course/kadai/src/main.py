@@ -27,6 +27,9 @@ def main():
     print('Test Loss:', score[0])
     print('Test Accuracy', score[1])
 
+    # モデルの保存
+    model.save('../week1/models/katakana_model.h5')
+
 if __name__ == '__main__':
     # args = config()
     main()

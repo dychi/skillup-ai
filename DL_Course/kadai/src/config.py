@@ -1,5 +1,5 @@
 
 batch_size = 10
-epochs = 20
+epochs = 15
 
-lr = 0.01
+lr = 0.001
