@@ -1,19 +1,33 @@
-from keras.layers import Input, Dense, Conv2D, MaxPooling2D, Flatten
+from keras.layers import Input, Dense, Conv2D, MaxPooling2D, Flatten, BatchNormalization, Activation
 from keras.models import Model
 from keras.optimizers import Adam
 
 import config
 
+
 def load_model():
     input = Input(shape=(28,28,1))
-    x = Conv2D(64, (3, 3), padding='same', activation='relu')(input)
+    # layer1
+    x = Conv2D(64, (3, 3), padding='same')(input)
+    x = BatchNormalization()(x)
+    x = Activation('relu')(x)
     x = MaxPooling2D((3, 3), strides=(1, 1), padding='valid')(x)
-    x = Conv2D(64, (3, 3), activation='relu')(x)
+    # layer2
+    x = Conv2D(64, (3, 3))(x)
+    x = BatchNormalization()(x)
+    x = Activation('relu')(x)
+    x = MaxPooling2D((3, 3), strides=(1, 1), padding='valid')(x)
+    # layer3
+    x = Conv2D(64, (3, 3))(x)
+    x = BatchNormalization()(x)
+    x = Activation('relu')(x)
     x = MaxPooling2D((3, 3), strides=(1, 1), padding='valid')(x)
 
     x = Flatten()(x)
 
-    x = Dense(128, activation='relu')(x)
+    x = Dense(128)(x)
+    x = BatchNormalization()(x)
+    x = Activation('relu')(x)
     x = Dense(64, activation='relu')(x)
 
     out = Dense(15, activation='softmax')(x)
