@@ -1,6 +1,6 @@
 from keras.layers import Input, Dense, Conv2D, MaxPooling2D, Flatten, BatchNormalization, Activation, Dropout
 from keras.models import Model
-from keras.optimizers import Adam, SGD, Adagrad
+from keras.optimizers import Adam, SGD, Adagrad, RMSprop
 
 
 def load_model(config):
@@ -11,14 +11,14 @@ def load_model(config):
     # x = BatchNormalization()(x)
     x = Activation('relu')(x)
     x = MaxPooling2D((2, 2), padding='same')(x)
-    x = Dropout(0.1)(x)
+    x = Dropout(0.25)(x)
     # layer2
     x = Conv2D(64, (3, 3), padding="same", activation='relu')(x)
     x = Conv2D(64, (3, 3), padding="same")(x)
     # x = BatchNormalization()(x)
     x = Activation('relu')(x)
     x = MaxPooling2D((2, 2), strides=(2, 2), padding='same')(x)
-    x = Dropout(0.2)(x)
+    x = Dropout(0.25)(x)
     # layer3
     # x = Conv2D(32, (2, 2))(x)
     # x = Conv2D(32, (2, 2))(x)
@@ -31,13 +31,13 @@ def load_model(config):
     # x = Dense(256)(x)
     # x = Activation('relu')(x)
     x = Dense(256, activation='relu')(x)
-    x = Dropout(0.4)(x)
+    x = Dropout(0.5)(x)
     out = Dense(15, activation='softmax')(x)
 
     model = Model(inputs=inputs, outputs=out)
 
     model.compile(loss='categorical_crossentropy',
-                  optimizer=Adam(lr=config["lr"], decay=0.01),
+                  optimizer=Adam(lr=config["lr"], epsilon=1e-08),# decay=0.01),
                   metrics=['accuracy'])
     return model
 
