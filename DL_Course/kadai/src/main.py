@@ -53,7 +53,7 @@ def main(config):
     print('Test Accuracy', score[1])
 
     # モデルの保存
-    model.save(os.path.abspath(os.path.dirname(__file__)) + "../week8/models/katakana_model.h5")
+    model.save(os.path.abspath(os.path.dirname(__file__)) + "/../week8/models/katakana_model.h5")
 
 
 if __name__ == '__main__':

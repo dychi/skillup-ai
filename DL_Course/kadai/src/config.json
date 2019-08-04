@@ -1,6 +1,6 @@
 {
-  "batch_size": 20,
-  "epochs": 5,
+  "batch_size": 60,
+  "epochs": 100,
   "lr": 0.001
 }
 
