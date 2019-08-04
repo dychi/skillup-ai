@@ -2,10 +2,8 @@ from keras.layers import Input, Dense, Conv2D, MaxPooling2D, Flatten, BatchNorma
 from keras.models import Model
 from keras.optimizers import Adam
 
-import config
 
-
-def load_model():
+def load_model(config):
     input = Input(shape=(28,28,1))
     # layer1
     x = Conv2D(64, (3, 3), padding='same')(input)
@@ -35,7 +33,7 @@ def load_model():
     model = Model(inputs=input, outputs=out)
 
     model.compile(loss='categorical_crossentropy',
-                  optimizer=Adam(lr=config.lr),
+                  optimizer=Adam(lr=config["lr"]),
                   metrics=['accuracy'])
     return model
 
