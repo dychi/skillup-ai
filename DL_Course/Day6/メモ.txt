@@ -1,0 +1,15 @@
+20190713メモ
+
+◾️著作権について
+- 他社に渡すためにデータ収集するのも大丈夫になった
+- 日本は営利目的でのデータ利用の許容が世界に比べて珍しい https://storialaw.jp/blog/4936
+- 
+
+
+◾️E資格
+- 最適化関数は数式と実装の問題が必ず出る
+- 数式の書式は「深層学習 by Goodfellow」から出題される
+- 覗き穴結合の計算式は「行列積でもアダマール積でも」正解になる可能性がある（選択肢次第）
+- Attention RNN
+  (BERT, End-to-End Memory Net, Google Neural Machine Translation)
+- 

@@ -1,0 +1,18 @@
+## DAY4_vr4_0_3,  2019.06.26
+* スライドp.17 文章修正 グループ正規化(Group Norm)は、バッチ正規化(Batch Norm)と同等の精度がでており、また、バッチサイズの影響をほとんど受けていないことがわかる
+
+
+## DAY4_vr4_0_2,  2019.06.03
+* スライドp.12 誤植修正　a8 -> A8
+* Notebook 4_1_batch_normalization_layer.ipynb, class BatchNormalizationのdef __backwardの131行目あたりのコメントを更新
+* Notebook 4_1_batch_normalization_layer_trainee.ipynb, class BatchNormalizationのdef __backwardの131行目あたりのコメントを更新
+* スライドp.26 誤植修正　勾配の補正式のLをL'に変更
+* スライドp.26 誤植修正　SGD更新式のLをL'に変更
+* Notebook 4_4_weight_decay_trainee.ipynb, 勾配の補正式のLをL'に変更
+* Notebook 4_4_weight_decay_trainee.ipynb, SGD更新式のLをL'に変更
+* Notebook 4_4_weight_decay.ipynb, 勾配の補正式のLをL'に変更
+* Notebook 4_4_weight_decay.ipynb, SGD更新式のLをL'に変更
+
+
+## DAY4_vr4_0_1,  2019.05.30
+* スライドp.32 グループワークの進め方を変更
