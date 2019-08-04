@@ -1,0 +1,10 @@
+
+## DAY3_vr4_0_2,  2019.05.29
+* スライドp.26 左右対称->点対称 
+* Notebook 3_1_SGD.ipynbの｀v_pre = self.v[key].copy()｀ の ｀.copy()｀は不要なので削除
+* Notebook optimizer.pyの｀v_pre = self.v[key].copy()｀ の ｀.copy()｀は不要なので削除
+
+
+## DAY3_vr4_0_1,  2019.05.21
+* スライドp.36 誤植修正「θ：パラーメータ」→「θ：パラメータ」
+* スライドp.42 誤植修正「適応」→「適用」

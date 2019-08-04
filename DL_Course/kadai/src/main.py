@@ -2,8 +2,12 @@
 from models import load_model
 from dataset import load_data
 from keras.callbacks import TensorBoard
+<<<<<<< HEAD
 from keras.preprocessing import image
 import tensorflow as tf
+=======
+import config
+>>>>>>> f2e02e31e896b7eb89c1880ef0686f3164cca935
 
 
 import os
@@ -44,12 +48,12 @@ def main(config):
     tb_cb = TensorBoard(log_dir='./tflog/')
     cbks = [tb_cb]
 
+    # Tensorboard
+    tb_cb = TensorBoard(log_dir='./tflog/', write_images=1)
+    cbks = [tb_cb]
+
     # 学習の実行
-    history = model.fit(x_train, y_train,
-                        batch_size=config['batch_size'],
-                        epochs=config['epochs'],
-                        callbacks=cbks,
-                        validation_data=(x_test, y_test))
+
 
     # モデルの構成確認
     model.summary()

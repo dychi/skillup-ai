@@ -108,3 +108,6 @@ venv.bak/
 *.gz
 
 .idea
+*.zip
+*.h5
+tflog/

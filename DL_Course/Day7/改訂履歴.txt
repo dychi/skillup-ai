@@ -1,0 +1,22 @@
+## DAY7_vr4_0_2,  2019.07.10
+*スライドp.46, 修正 W^(t) -> W_s
+*スライドp.46, 修正 W^(c) -> W_c
+*スライドp.46, Ω後の乗算ノードを削除
+*スライドp.46, 修正 α_𝐼𝑗 -> 𝑎_𝐼𝑗
+*スライドp.45, 修正 W^(c) -> W_c
+*スライドp.45, 修正 W^(t) -> W_s
+*スライドP.71  削除 "; 「彼」「は」「りんご」「を」「買っ」「た」"
+* common/layers.pyにclass Tanhを追加
+* Notebook, 7_5_AttentionSeq2seq,attention_seq2seq.py, tanhレイヤとaffine_sレイヤに関する部分を追加
+*スライドp.69, 翻訳タスクに関する記述を追加
+*7_10_Positional_encoding.ipynb追加
+*スライドp.67, 値を修正 
+
+
+## DAY7_vr4_0_1,  2019.07.10
+* Notebook, 7_3_seq2seq, 動作確認部分における次元数の設定を修正
+* Notebook, 7_4_TimeAttention, 動作確認部分における次元数の設定を修正
+* Notebook, 7_5_AttentionSeq2seq, 動作確認部分における次元数の設定を修正
+* Notebook, 7_6_TimeBiLSTM, 動作確認部分における次元数の設定を修正
+* スライドp.62, トランスフォーマーの実装に関する参考リンクを追加
+* word2vecに関するAppendixファイル追加
