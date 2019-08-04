@@ -1,14 +1,17 @@
-from keras.layers import Input, Dense, Conv2D, MaxPooling2D, Flatten
+from keras.layers import Input, Dense, Conv2D, MaxPooling2D, Flatten, BatchNormalization, Activation
 from keras.models import Model
 from keras.optimizers import Adam
 
-import config
 
-def load_model():
+def load_model(args):
     input = Input(shape=(28,28,1))
-    x = Conv2D(64, (3, 3), padding='same', activation='relu')(input)
+    x = Conv2D(64, (3, 3), padding='same')(input)
+    x = BatchNormalization()(x)
+    x = Activation('relu')(x)
     x = MaxPooling2D((3, 3), strides=(1, 1), padding='valid')(x)
-    x = Conv2D(64, (3, 3), activation='relu')(x)
+    x = Conv2D(64, (3, 3))(x)
+    x = BatchNormalization()(x)
+    x = Activation('relu')(x)
     x = MaxPooling2D((3, 3), strides=(1, 1), padding='valid')(x)
 
     x = Flatten()(x)
@@ -21,7 +24,7 @@ def load_model():
     model = Model(inputs=input, outputs=out)
 
     model.compile(loss='categorical_crossentropy',
-                  optimizer=Adam(lr=config.lr),
+                  optimizer=Adam(lr=args['lr']),
                   metrics=['accuracy'])
     return model
 
