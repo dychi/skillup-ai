@@ -3,7 +3,7 @@ from models import load_model
 from dataset import load_data
 
 import tensorflow as tf
-from keras.callbacks import TensorBoard
+from keras.callbacks import TensorBoard, ReduceLROnPlateau
 from keras.preprocessing import image
 
 import os
@@ -29,10 +29,19 @@ def main(config):
     tb_cb = TensorBoard(log_dir=logdir,
                         histogram_freq=1,
                         write_images=1)
-    cbks = [tb_cb]
+    # Learning Rate Reducer
+    lr_reduction = ReduceLROnPlateau(monitor='val_loss',
+                                     patience=5,
+                                     verbose=1,
+                                     factor=0.8,
+                                     min_lr=0.000001)
+    cbks = [tb_cb, lr_reduction]
 
     # augmentation
-    datagen = image.ImageDataGenerator(shear_range=5)
+    datagen = image.ImageDataGenerator(shear_range=5,
+                                       rotation_range=15,
+                                       width_shift_range=0.1,
+                                       height_shift_range=0.1)
     gen = datagen.flow(x_train, y_train, batch_size=config["batch_size"])
 
     x, y = next(gen)
@@ -53,7 +62,7 @@ def main(config):
     print('Test Accuracy', score[1])
 
     # モデルの保存
-    model.save(os.path.abspath(os.path.dirname(__file__)) + "../week8/models/katakana_model.h5")
+    model.save(os.path.abspath(os.path.dirname(__file__)) + "/../week8/models/katakana_model.h5")
 
 
 if __name__ == '__main__':
