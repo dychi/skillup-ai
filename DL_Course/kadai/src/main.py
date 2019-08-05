@@ -5,7 +5,7 @@ from dataset import load_data
 import tensorflow as tf
 from keras.callbacks import TensorBoard
 from keras.preprocessing import image
-from keras.callbacks import ReduceLROnPlateau
+from keras.callbacks import ReduceLROnPlateau, LearningRateScheduler
 
 import os
 import json
@@ -36,7 +36,7 @@ def main(config):
                                                 verbose=1,
                                                 factor=0.8,
                                                 min_lr=0.00001)
-
+    annealer = LearningRateScheduler(lambda x: 1e-3 * 0.9 ** x)
     cbks = [tb_cb, learning_rate_reduction]
 
     # augmentation
